@@ -1,7 +1,18 @@
 -module(cuttlefish_unit).
 
 -include_lib("eunit/include/eunit.hrl").
--compile(export_all).
+
+-export([generate_templated_config/3,
+         generate_templated_config/4,
+         render_template/2,
+         generate_config/3,
+         assert_not_configured/2,
+         assert_error/1,
+         assert_error_in_phase/2,
+         assert_error/3,
+         assert_errors/2,
+         assert_errors/3,
+         dump_to_file/2]).
 
 generate_templated_config(FileName, Conf, Context) ->
     generate_templated_config(FileName, Conf, Context, {[], [], []}).
